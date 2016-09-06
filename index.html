@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0/angular-material.css">
+  <link rel="stylesheet" type="text/css" href="https://material.angularjs.org/1.1.0/docs.css">
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="directive.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyBofbGoy3lMv3tI0qn12XcGq-luJk3dCyE"></script>
+  <style type="text/css">
+ .content
+ {
+  padding-left:15px;
+ }
+ .fav
+ {
+  background:pink;
+  color:white;
+  font-size:12px;
+  padding-left:15px;
+ }
+  </style>
+</head>
+<body>
+  <md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Weather</h2>
+    </div>
+  </md-toolbar>
+<md-content flex layout-padding class="content">
+<div  ng-app="MyApp">
+  <div ng-controller="myCtr">
+ 
+<div>
+    <div>Please Select your Region: {{chosenPlace}}</div>
+    <p>
+      <input ng-model="chosenPlace" googleplace ng-change="weather()"/>
+      <md-button md-no-ink class="md-warn" ng-click="addF()">Add to Favorites</md-button>  
+    </p>
+
+    <div ng-include="wUrl">
+  
+    </div>
+    </md-content>
+</div>
+
+</div>
+</body>
+</html>

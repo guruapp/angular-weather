@@ -1,0 +1,10 @@
+    <div>
+      lon {{ data.coord.lon }}
+  <br>lat {{ data.coord.lat }}  
+  <br>weather description: {{ data.weather[0].description }}
+  <br>main weather temp {{ data.main.temp }}
+    </div>
+
+    <div class="fav" ng-repeat="datas in fav">
+     Fav {{$index +1}}: {{datas.text}} - Temp: {{datas.temp}} <md-button md-no-ink class="md-primary" ng-click="removeF($index)">Remove</md-button>
+    </div>
